@@ -1,4 +1,4 @@
-Tarefas posteriores:
+﻿Tarefas posteriores:
 PPI1 Website - Suportar acesso a artigo por código
 PPI2 Área administrativa - Ajustes no cadastro de artigos
 	- O cadastro poderá ser acessado tanto por designers quanto por administradores, e deverá ser adaptado de forma dinâmica para cada um dos perfis.
