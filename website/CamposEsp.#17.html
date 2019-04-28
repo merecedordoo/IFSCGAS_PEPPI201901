@@ -20,15 +20,15 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-light bg-light"> <!-- WYSIWYG editor de texto -->
+		<nav class = "navbar navbar-light bg-light"> <!-- WYSIWYG editor de texto -->
 			
 			<span class = "border border-dark">
 
-				<div class="container">
-					<div class="row">
-	    				<div class="col-auto"> 
+				<div class = "container">
+					<div class = "row">
+	    				<div class = "col-auto"> 
 
-	    					<button type = "button" class = "btn btn-light">
+	    					<button type = "button" class = "btn btn-light" data-toggle = "tooltip" data-placement="bottom" title="Negrito">
 	    						<img src = "icones/build/svg/bold.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Negrito -->
 	    					</button>
 
@@ -36,7 +36,7 @@
 
 	    				<div class="col-auto">
 
-	    					<button type = "button" class = "btn btn-light">
+	    					<button type = "button" class = "btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Itálico">
 	    						<img src = "icones/build/svg/italic.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Italico -->
 	    					</button>
 
@@ -44,7 +44,7 @@
 
 	    				<div class="col-auto">
 
-	    					<button type = "button" class = "btn btn-light">
+	    					<button type = "button" class = "btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Sublinhado">
 	    						<img src = "icones/build/svg/horizontal-rule.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Sublinhar -->
 	    					</button>
 
@@ -52,7 +52,7 @@
 
 	    				<div class="col-auto">
 
-	    					<button type = "button" class = "btn btn-light">
+	    					<button type = "button" class = "btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Alinhar a esquerda">
 	    						<img src = "icones+/svg/align-left.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Alinhar Esquerda -->
 	    					</button>
 
@@ -60,7 +60,7 @@
 
 	    				<div class="col-auto">
 
-	    					<button type = "button" class = "btn btn-light">
+	    					<button type = "button" class = "btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Alinhar no centro">
 	    						<img src = "icones+/svg/align-center.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Alinhar Centro -->
 	    					</button>
 
@@ -68,7 +68,7 @@
 
 	    				<div class="col-auto">
 
-	    					<button type = "button" class = "btn btn-light">
+	    					<button type = "button" class = "btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Alinhar a direita">
 	    						<img src = "icones+/svg/align-right.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Alinhar Direita -->
 	    					</button>
 
@@ -76,11 +76,13 @@
 
 	    				<div class="col-auto">
 
-	    					<button type = "button" class = "btn btn-light">
-	    						<img src = "icones+/svg/justify-center.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone Alinhar Direita -->
+	    					<button type = "button" class = "btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Justificar a direita">
+	    						<img src = "icones+/svg/justify-center.svg" class = "img-fluid" alt = "Responsive image"> <!-- Icone justifica a direita -->
 	    					</button>
-
 	    				</div>
+	    			</div>
+
+	    			<script> $('[data-toggle="tooltip"]').tooltip(); </script> <!-- Todos os elementos com o valor tooltip vai invocar o tooltip(); -->
 				</div>
 			</span>
 		</nav>
