@@ -1,1 +1,1 @@
-php composer.phar install
+C:\xampp\php\php.exe composer.phar install
