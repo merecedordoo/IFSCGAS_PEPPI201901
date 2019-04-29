@@ -1,4 +1,4 @@
-﻿Tarefas posteriores:
+Tarefas posteriores:
 PPI1 Website - Suportar acesso a artigo por código
 PPI2 Área administrativa - Ajustes no cadastro de artigos
 	- O cadastro poderá ser acessado tanto por designers quanto por administradores, e deverá ser adaptado de forma dinâmica para cada um dos perfis.
@@ -6,8 +6,8 @@ PPI2 Área administrativa - Ajustes no cadastro de artigos
 	- Designers só poderão listar, criar, editar e excluir artigos de sua propriedade.
 PPI2 Área administrativa - Exclusão de fotografias
 	- Quando excluir artigo, projeto ou desfile, excluir também as fotografias associadas.
-	- Solicitar dupla conf irmação, destacando a exclusão das fotografias.
+	- Solicitar dupla confirmação, destacando a exclusão das fotografias.
 
 Responsáveis:
 - Infraestrutura: Guilherme
-- Testes: Lucas e Mateus 
+- Testes: Lucas e Mateus
