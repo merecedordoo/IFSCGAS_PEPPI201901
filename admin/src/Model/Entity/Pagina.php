@@ -4,13 +4,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Categoria Entity
+ * Pagina Entity
  *
  * @property int $id
+ * @property string $identificador
  * @property string $nome
- * @property string $descricao
+ * @property string $conteudo
  */
-class Categoria extends Entity
+class Pagina extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -22,7 +23,8 @@ class Categoria extends Entity
      * @var array
      */
     protected $_accessible = [
+        'identificador' => true,
         'nome' => true,
-        'descricao' => true
+        'conteudo' => true
     ];
 }

@@ -1,22 +1,23 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Categoria $categoria
+ * @var \App\Model\Entity\Pagina $pagina
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Categorias'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Paginas'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="categorias form large-9 medium-8 columns content">
-    <?= $this->Form->create($categoria) ?>
+<div class="paginas form large-9 medium-8 columns content">
+    <?= $this->Form->create($pagina) ?>
     <fieldset>
-        <legend><?= __('Add Categoria') ?></legend>
+        <legend><?= __('Add Pagina') ?></legend>
         <?php
+            echo $this->Form->control('identificador');
             echo $this->Form->control('nome');
-            echo $this->Form->control('descricao');
+            echo $this->Form->control('conteudo');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

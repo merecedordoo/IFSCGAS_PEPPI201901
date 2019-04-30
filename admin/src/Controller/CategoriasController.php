@@ -1,57 +1,106 @@
 <?php
 namespace App\Controller;
 
+use App\Controller\AppController;
+
+/**
+ * Categorias Controller
+ *
+ * @property \App\Model\Table\CategoriasTable $Categorias
+ *
+ * @method \App\Model\Entity\Categoria[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ */
 class CategoriasController extends AppController
 {
-	public function index()
-	{
-		$this->loadComponent('Paginator');
-		$categorias = $this->Paginator->paginate($this->Categorias->find());
-		$this->set(compact('categorias'));
-	}
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function index()
+    {
+        $categorias = $this->paginate($this->Categorias);
 
-	public function view($id = null)
-	{
-		$categoria = $this->Categorias->findById($id)->firstOrFail();
-		$this->set(compact('categoria'));
-	}
+        $this->set(compact('categorias'));
+    }
 
-	public function add()
-	{
-		$categoria = $this->Categorias->newEntity();
-		if ($this->request->is(['post'])) {
-			$this->Categorias->patchEntity($categoria, $this->request->getData());
-			if ($this->Categorias->save($categoria)) {
-				$this->Flash->success(__('Categoria adicionada.'));
-				return $this->redirect(['action' => 'index']);
-			}
-			$this->Flash->error(__('Não foi possível adicionar.'));
-		}
-		$this->set('categoria', $categoria);
-	}
+    /**
+     * View method
+     *
+     * @param string|null $id Categoria id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function view($id = null)
+    {
+        $categoria = $this->Categorias->get($id, [
+            'contain' => []
+        ]);
 
-	public function edit($id = null)
-	{
-		$categoria = $this->Categorias->findById($id)->firstOrFail();
-		if ($this->request->is(['post', 'put'])) {
-			$this->Categorias->patchEntity($categoria, $this->request->getData());
-			if ($this->Categorias->save($categoria)) {
-				$this->Flash->success(__('Categoria atualizada.'));
-				return $this->redirect(['action' => 'index']);
-			}
-			$this->Flash->error(__('Não foi possível atualizar.'));
-		}
-		$this->set('categoria', $categoria);
-	}
+        $this->set('categoria', $categoria);
+    }
 
-	public function delete($id)
-	{
-		$this->request->allowMethod(['post', 'delete']);
-		$categoria = $this->Categorias->findById($id)->firstOrFail();
-		if ($this->Categorias->delete($categoria)) {
-			$this->Flash->success(__('A categoria {0} foi excluída.', $categoria->nome));
-			return $this->redirect(['action' => 'index']);
-		}
-	}
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function add()
+    {
+        $categoria = $this->Categorias->newEntity();
+        if ($this->request->is('post')) {
+            $categoria = $this->Categorias->patchEntity($categoria, $this->request->getData());
+            if ($this->Categorias->save($categoria)) {
+                $this->Flash->success(__('The categoria has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The categoria could not be saved. Please, try again.'));
+        }
+        $this->set(compact('categoria'));
+    }
+
+    /**
+     * Edit method
+     *
+     * @param string|null $id Categoria id.
+     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function edit($id = null)
+    {
+        $categoria = $this->Categorias->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $categoria = $this->Categorias->patchEntity($categoria, $this->request->getData());
+            if ($this->Categorias->save($categoria)) {
+                $this->Flash->success(__('The categoria has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The categoria could not be saved. Please, try again.'));
+        }
+        $this->set(compact('categoria'));
+    }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id Categoria id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $categoria = $this->Categorias->get($id);
+        if ($this->Categorias->delete($categoria)) {
+            $this->Flash->success(__('The categoria has been deleted.'));
+        } else {
+            $this->Flash->error(__('The categoria could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
 }
-?>
