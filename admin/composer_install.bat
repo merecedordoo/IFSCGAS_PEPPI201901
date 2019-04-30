@@ -1,1 +1,2 @@
-C:\xampp\php\php.exe composer.phar install
+SET PATH=%PATH%;C:\xampp\php
+php composer.phar install
