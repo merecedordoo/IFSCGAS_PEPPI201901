@@ -4,6 +4,7 @@
     <tr>
         <th>Nome</th>
         <th>Descrição</th>
+		<th>Ações</th>
     </tr>
     <?php foreach ($categorias as $categoria): ?>
     <tr>
@@ -13,6 +14,14 @@
         <td>
             <?= $categoria->descricao ?>
         </td>
+		<td>
+			<?= $this->Html->link('Edit', ['action' => 'edit', $categoria->id]) ?>
+			<?= $this->Form->postLink(
+				'Delete',
+				['action' => 'delete', $categoria->id],
+				['confirm' => 'Tu tem certeza?'])
+			?>
+		</td>
     </tr>
     <?php endforeach; ?>
 </table>

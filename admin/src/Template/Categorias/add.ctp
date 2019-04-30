@@ -1,4 +1,4 @@
-<h1>Edit Categoria</h1>
+<h1>New Categoria</h1>
 <?php
     echo $this->Form->create($categoria);
     echo $this->Form->control('nome');
