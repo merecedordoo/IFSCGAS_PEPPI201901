@@ -1,21 +1,21 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\CategoriasTable;
+use App\Model\Table\DesfilesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\CategoriasTable Test Case
+ * App\Model\Table\DesfilesTable Test Case
  */
-class CategoriasTableTest extends TestCase
+class DesfilesTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\CategoriasTable
+     * @var \App\Model\Table\DesfilesTable
      */
-    public $Categorias;
+    public $Desfiles;
 
     /**
      * Fixtures
@@ -23,8 +23,8 @@ class CategoriasTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Categorias',
-        'app.Artigos'
+        'app.Desfiles',
+        'app.DesfileFotografias'
     ];
 
     /**
@@ -35,8 +35,8 @@ class CategoriasTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('Categorias') ? [] : ['className' => CategoriasTable::class];
-        $this->Categorias = TableRegistry::getTableLocator()->get('Categorias', $config);
+        $config = TableRegistry::getTableLocator()->exists('Desfiles') ? [] : ['className' => DesfilesTable::class];
+        $this->Desfiles = TableRegistry::getTableLocator()->get('Desfiles', $config);
     }
 
     /**
@@ -46,7 +46,7 @@ class CategoriasTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Categorias);
+        unset($this->Desfiles);
 
         parent::tearDown();
     }

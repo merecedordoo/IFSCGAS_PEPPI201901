@@ -4,15 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Categoria Entity
+ * ArtigoFotografia Entity
  *
  * @property int $id
- * @property string $nome
- * @property string $descricao
+ * @property int $artigo_id
+ * @property int $ordem
+ * @property string $nome_arquivo
+ * @property string $caminho_arquivo
  *
- * @property \App\Model\Entity\Artigo[] $artigos
+ * @property \App\Model\Entity\Artigo $artigo
  */
-class Categoria extends Entity
+class ArtigoFotografia extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -24,8 +26,10 @@ class Categoria extends Entity
      * @var array
      */
     protected $_accessible = [
-        'nome' => true,
-        'descricao' => true,
-        'artigos' => true
+        'artigo_id' => true,
+        'ordem' => true,
+        'nome_arquivo' => true,
+        'caminho_arquivo' => true,
+        'artigo' => true
     ];
 }

@@ -4,15 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Categoria Entity
+ * Administrador Entity
  *
  * @property int $id
+ * @property string $senha
  * @property string $nome
- * @property string $descricao
- *
- * @property \App\Model\Entity\Artigo[] $artigos
+ * @property string $email
+ * @property bool $recebe_contato
  */
-class Categoria extends Entity
+class Administrador extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -24,8 +24,9 @@ class Categoria extends Entity
      * @var array
      */
     protected $_accessible = [
+        'senha' => true,
         'nome' => true,
-        'descricao' => true,
-        'artigos' => true
+        'email' => true,
+        'recebe_contato' => true
     ];
 }

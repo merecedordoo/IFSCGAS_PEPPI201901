@@ -1,39 +1,87 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Categoria $categoria
+ * @var \App\Model\Entity\Designer $designer
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Categoria'), ['action' => 'edit', $categoria->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Categoria'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Categorias'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Categoria'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Edit Designer'), ['action' => 'edit', $designer->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Designer'), ['action' => 'delete', $designer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $designer->id)]) ?> </li>
+        <li><?= $this->Html->link(__('List Designers'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Designer'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Artigos'), ['controller' => 'Artigos', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Artigo'), ['controller' => 'Artigos', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="categorias view large-9 medium-8 columns content">
-    <h3><?= h($categoria->id) ?></h3>
+<div class="designers view large-9 medium-8 columns content">
+    <h3><?= h($designer->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Nome') ?></th>
-            <td><?= h($categoria->nome) ?></td>
+            <th scope="row"><?= __('Senha') ?></th>
+            <td><?= h($designer->senha) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Descricao') ?></th>
-            <td><?= h($categoria->descricao) ?></td>
+            <th scope="row"><?= __('Nome') ?></th>
+            <td><?= h($designer->nome) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= h($designer->email) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Telefone') ?></th>
+            <td><?= h($designer->telefone) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Celular') ?></th>
+            <td><?= h($designer->celular) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Curso') ?></th>
+            <td><?= h($designer->curso) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fase') ?></th>
+            <td><?= h($designer->fase) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Apresentacao Breve') ?></th>
+            <td><?= h($designer->apresentacao_breve) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Caminho Fotografia') ?></th>
+            <td><?= h($designer->caminho_fotografia) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($categoria->id) ?></td>
+            <td><?= $this->Number->format($designer->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Inscricao') ?></th>
+            <td><?= h($designer->inscricao) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Atualizacao') ?></th>
+            <td><?= h($designer->atualizacao) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Aprovado') ?></th>
+            <td><?= $designer->aprovado ? __('Yes') : __('No'); ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Celular Whatsapp') ?></th>
+            <td><?= $designer->celular_whatsapp ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Apresentacao Detalhada') ?></h4>
+        <?= $this->Text->autoParagraph(h($designer->apresentacao_detalhada)); ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Artigos') ?></h4>
-        <?php if (!empty($categoria->artigos)): ?>
+        <?php if (!empty($designer->artigos)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
@@ -53,7 +101,7 @@
                 <th scope="col"><?= __('Numero Compartilhamentos') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($categoria->artigos as $artigos): ?>
+            <?php foreach ($designer->artigos as $artigos): ?>
             <tr>
                 <td><?= h($artigos->id) ?></td>
                 <td><?= h($artigos->designer_id) ?></td>
