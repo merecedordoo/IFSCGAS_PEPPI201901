@@ -7,12 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Categoria'), ['action' => 'edit', $categoria->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Categoria'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Categorias'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Categoria'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Artigos'), ['controller' => 'Artigos', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Artigo'), ['controller' => 'Artigos', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Editar Categoria'), ['action' => 'edit', $categoria->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Deletar Categoria'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listar Categorias'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nova Categoria'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listar Artigos'), ['controller' => 'Artigos', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Novo Artigo'), ['controller' => 'Artigos', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="categorias view large-9 medium-8 columns content">
@@ -71,9 +71,9 @@
                 <td><?= h($artigos->numero_favoritacoes) ?></td>
                 <td><?= h($artigos->numero_compartilhamentos) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Artigos', 'action' => 'view', $artigos->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Artigos', 'action' => 'edit', $artigos->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Artigos', 'action' => 'delete', $artigos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $artigos->id)]) ?>
+                    <?= $this->Html->link(__('Ver'), ['controller' => 'Artigos', 'action' => 'view', $artigos->id]) ?>
+                    <?= $this->Html->link(__('Editar'), ['controller' => 'Artigos', 'action' => 'edit', $artigos->id]) ?>
+                    <?= $this->Form->postLink(__('Deletar'), ['controller' => 'Artigos', 'action' => 'delete', $artigos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $artigos->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
