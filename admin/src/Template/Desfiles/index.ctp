@@ -17,24 +17,17 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('data') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('turma') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('descricao_breve') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('caminho_capa') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($desfiles as $desfile): ?>
             <tr>
-                <td><?= $this->Number->format($desfile->id) ?></td>
                 <td><?= h($desfile->data) ?></td>
                 <td><?= h($desfile->turma) ?></td>
-                <td><?= h($desfile->descricao_breve) ?></td>
-                <td><?= h($desfile->caminho_capa) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $desfile->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $desfile->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $desfile->id], ['confirm' => __('Are you sure you want to delete # {0}?', $desfile->id)]) ?>
                 </td>
