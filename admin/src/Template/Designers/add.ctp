@@ -17,10 +17,9 @@
     <fieldset>
         <legend><?= __('Add Designer') ?></legend>
         <?php
-            echo $this->Form->control('senha');
-            echo $this->Form->control('aprovado');
             echo $this->Form->control('nome');
             echo $this->Form->control('email');
+            echo $this->Form->control('senha',['type'=>'password']);
             echo $this->Form->control('telefone');
             echo $this->Form->control('celular');
             echo $this->Form->control('celular_whatsapp');
