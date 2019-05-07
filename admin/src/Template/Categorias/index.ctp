@@ -26,9 +26,8 @@
                 <td><?= h($categoria->nome) ?></td>
                 <td><?= h($categoria->descricao) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $categoria->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $categoria->id]) ?>
-                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $categoria->id], ['confirm' => __('Você tem certeza que quer deletar # {0}?', $categoria->nome)]) ?>
+                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $categoria->id], ['confirm' => __('Você tem certeza que quer deletar "{0}"?', $categoria->nome)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
