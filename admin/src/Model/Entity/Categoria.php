@@ -26,6 +26,5 @@ class Categoria extends Entity
     protected $_accessible = [
         'nome' => true,
         'descricao' => true,
-        'artigos' => true
     ];
 }
