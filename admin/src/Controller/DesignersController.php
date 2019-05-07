@@ -50,6 +50,9 @@ class DesignersController extends AppController
         $designer = $this->Designers->newEntity();
         if ($this->request->is('post')) {
             $designer = $this->Designers->patchEntity($designer, $this->request->getData());
+            $designer->inscricao= time();
+            $designer->atualizacao= time();
+            $designer->aprovado=true;
             if ($this->Designers->save($designer)) {
                 $this->Flash->success(__('The designer has been saved.'));
 
@@ -74,6 +77,7 @@ class DesignersController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $designer = $this->Designers->patchEntity($designer, $this->request->getData());
+            $designer->atualizacao= time();
             if ($this->Designers->save($designer)) {
                 $this->Flash->success(__('The designer has been saved.'));
 

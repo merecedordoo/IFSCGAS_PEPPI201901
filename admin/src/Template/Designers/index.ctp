@@ -19,14 +19,10 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('nome') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('telefone') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('celular') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('celular_whatsapp') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('inscricao') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('atualizacao') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('curso') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('fase') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('apresentacao_breve') ?></th>
                 <th scope="col" class="actions"><?= __('Acoes') ?></th>
             </tr>
         </thead>
@@ -35,16 +31,11 @@
             <tr>
                 <td><?= h($designer->nome) ?></td>
                 <td><?= h($designer->email) ?></td>
-                <td><?= h($designer->telefone) ?></td>
-                <td><?= h($designer->celular) ?></td>
-                <td><?= h($designer->celular_whatsapp) ?></td>
                 <td><?= h($designer->inscricao) ?></td>
                 <td><?= h($designer->atualizacao) ?></td>
                 <td><?= h($designer->curso) ?></td>
                 <td><?= h($designer->fase) ?></td>
-                <td><?= h($designer->apresentacao_breve) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $designer->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $designer->id]) ?>
                     <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $designer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $designer->id)]) ?>
                 </td>

@@ -36,15 +36,15 @@ class Designer extends Entity
      * @var array
      */
     protected $_accessible = [
-        'senha' => true,
+        'senha' => false,
         'aprovado' => true,
         'nome' => true,
         'email' => true,
         'telefone' => true,
         'celular' => true,
         'celular_whatsapp' => true,
-        'inscricao' => true,
-        'atualizacao' => true,
+        'inscricao' => false,
+        'atualizacao' => false,
         'curso' => true,
         'fase' => true,
         'apresentacao_breve' => true,
