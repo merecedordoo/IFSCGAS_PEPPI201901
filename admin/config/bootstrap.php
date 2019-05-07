@@ -191,10 +191,6 @@ Type::build('datetime')
     ->useImmutable();
 Type::build('timestamp')
     ->useImmutable();
-Cake\I18n\Date::setToStringFormat('dd/mm/YYYY');
-Cake\I18n\Time::setToStringFormat('dd/mm/YYYY HH:mm');
-Cake\I18n\FrozenDate::setToStringFormat('dd/MM/yyyy');
-Cake\I18n\FrozenTime::setToStringFormat('dd/mm/YYYY HH:mm');
 
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
